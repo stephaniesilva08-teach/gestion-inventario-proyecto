@@ -1,5 +1,0 @@
- REPORTE GENERAL DE INVENTARIO 
-Codigo: 1 | Producto: anillo
- Total cantidad bodegas: 3
- Total stock bodegas: 4
- -norte: cantidad=3, stock=4

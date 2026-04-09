@@ -1,5 +1,0 @@
- REPORTE GENERAL DE INVENTARIO 
-Codigo: 1 | Producto: kol
- Total cantidad bodegas: 4
- Total stock bodegas: 5
- -centro: cantidad=4, stock=5
