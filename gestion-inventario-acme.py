@@ -1,5 +1,11 @@
 from datetime import datetime
 import json
+import config
+
+
+rutaReg = config.ruta_absoluta/"datos_registro.json"
+rutaInv = config.ruta_absoluta/"datos_inventario.json"
+rutaHis = config.ruta_absoluta/"datos_historial.json"
 
 inventario=[] 
 registro=[] 
@@ -12,7 +18,7 @@ def json_registro():
     datos_completos={
         "registro_productos": registro
     }
-    with open("datos_registro.json", "w") as archivo:
+    with open(rutaReg, "w") as archivo:
         json.dump(datos_completos, archivo)
         print(" DATOS GUARDADOS EN JSON ")
 
@@ -20,7 +26,7 @@ def json_inventario(inventario):
     datos_completos={
         "registro_productos": inventario
     }
-    with open("datos_inventario.json", "w") as archivo:
+    with open(rutaInv, "w") as archivo:
         json.dump(datos_completos, archivo)
         print(" DATOS GUARDADOS EN JSON ")
 
@@ -28,25 +34,25 @@ def json_historial(historial):
     datos_completos={
         "historial_productos": historial
     }
-    with open("datos_historial.json", "w") as archivo:
+    with open(rutaHis, "w") as archivo:
         json.dump(datos_completos,archivo)
         print(" DATOS GUARDADOS EN JSON ")
 ####
 def cargar_datos_registro():
     try:
-        with open("datos_registro.json", "r") as archivo:
+        with open(rutaReg, "r") as archivo:
             return json.load(archivo)
     except:
         return[]
 def cargar_datos_inventario():
     try:
-        with open("datos_inventario.json", "r") as archivo:
+        with open(rutaInv, "r") as archivo:
             return json.load(archivo)
     except:
         return[]
 def cargar_datos_historial():
     try:
-        with open("datos_historial.json","r" ) as archivo:
+        with open(rutaHis,"r" ) as archivo:
             datos=json.load(archivo)
             return datos["historial_productos"]
     except:
